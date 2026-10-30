@@ -1,4 +1,5 @@
 import type { Place } from "./tale";
+import { previewAssetUrl } from "@/lib/preview-path-prefix";
 
 const SRC: Record<Place, string> = {
   park: "/story/places/park.png",
@@ -15,7 +16,7 @@ function picture(place: Place) {
   let img = cache.get(place);
   if (!img) {
     img = new Image();
-    img.src = SRC[place];
+    img.src = previewAssetUrl(SRC[place]);
     cache.set(place, img);
   }
   return img;

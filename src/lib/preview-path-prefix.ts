@@ -41,12 +41,22 @@ export function prefixAssetPath(path: string, hostname: string, pathname: string
   return prefix ? `${prefix}${clean}` : clean;
 }
 
+function publicBase(): string {
+  const raw =
+    typeof import.meta !== "undefined" && import.meta.env && typeof import.meta.env.BASE_URL === "string"
+      ? import.meta.env.BASE_URL
+      : "/";
+  if (!raw || raw === "/") return "";
+  return raw.endsWith("/") ? raw.slice(0, -1) : raw;
+}
+
 /** Public files under a path-based preview (`/hds-…/dressup/…`), or the path as-is. */
 export function previewAssetUrl(path: string): string {
-  if (typeof window === "undefined") {
-    return path.startsWith("/") ? path : `/${path}`;
-  }
-  return prefixAssetPath(path, window.location.hostname, window.location.pathname);
+  const clean = path.startsWith("/") ? path : `/${path}`;
+  if (typeof window === "undefined") return `${publicBase()}${clean}`;
+  const prefixed = prefixAssetPath(clean, window.location.hostname, window.location.pathname);
+  if (prefixed !== clean) return prefixed;
+  return `${publicBase()}${clean}`;
 }
 
 export function previewPathRewrite(): LocationRewrite | undefined {

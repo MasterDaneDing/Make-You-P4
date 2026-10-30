@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Make a Person",
+      "hasCanvas": true,
+      "bodyTextLen": 249,
+      "bodyTextHash": "c62057fbd03035c6fac90ef6607be99fa8d7e9dff3e6e69e54a3832014f5c8c5",
+      "bodyTextPrefix": "DRESS-UP Tune on Start with a head. Each piece appears when you ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Make a Person",
+      "hasCanvas": true,
+      "bodyTextLen": 143,
+      "bodyTextHash": "757359da7a04310da7be64a8bdf9c59308c2089dff63eb14edd673e78584c687",
+      "bodyTextPrefix": "DRESS-UP Tune on Your name Restart Surprise me This is me Head H",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}
